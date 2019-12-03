@@ -1,6 +1,9 @@
 package com.nataliee_edeno.ex2;
 
 
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.RectF;
 
 public class Paddle
@@ -22,4 +25,17 @@ public class Paddle
     public RectF getRect(){
         return rec;
     }
+
+    public void draw(Canvas canvas)
+    {
+        Paint rectPen = new Paint();
+        rectPen.setStyle(Paint.Style.STROKE);
+        rectPen.setStrokeWidth(5);
+        rectPen.setColor(Color.BLACK);
+
+        canvas.drawRect(this.rec, rectPen);
+
+       // canvas.drawRect(x,y, x+len, y+hei, rectPen);
+    }
+
 }
